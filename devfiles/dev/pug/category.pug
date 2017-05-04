@@ -1,0 +1,52 @@
+extends includes/template
+
+block title 
+	| Category
+append links
+	link(href='category.css' rel='stylesheet') 
+block content 
+	.mainwrapper
+		.container
+			-var authorization = true;
+			-var quantity = 4;
+			include includes/top_navigation
+		.container.middleblock
+			.path
+				a(href="#") Home 
+				span  / 
+				a(href="#")  Men
+			mixin headerblock(header,href)
+				.cats
+					h3= header
+					a(class="show" href=""+href) show more
+					if block
+					block
+			mixin productblock(href,src,name,price)
+				.productblock
+					a(class="picture" href=""+href)
+						img(src=""+src)
+					p.name
+						a(href=""+href)= name
+					p.price= price
+			+headerblock("Coats","#")
+				.gallery
+					+productblock("#","http://placehold.it/208x256/ffffff","Double-Layered Top","€ 89,95")
+					+productblock("#","http://placehold.it/208x256/ffffff","Double-Layered Top","€ 89,95")
+					+productblock("#","http://placehold.it/208x256/ffffff","Double-Layered Top","€ 89,95")
+					+productblock("#","http://placehold.it/208x256/ffffff","Double-Layered Top","€ 89,95")
+			+headerblock("Outerwear","#")
+				.gallery
+					+productblock("#","http://placehold.it/208x256/ffffff","Double-Layered Top","€ 89,95")
+					+productblock("#","http://placehold.it/208x256/ffffff","Double-Layered Top","€ 89,95")
+					+productblock("#","http://placehold.it/208x256/ffffff","Double-Layered Top","€ 89,95")
+					+productblock("#","http://placehold.it/208x256/ffffff","Double-Layered Top","€ 89,95")
+			+headerblock("T-shirts","#")
+				.gallery
+					+productblock("#","http://placehold.it/208x256/ffffff","Double-Layered Top","€ 89,95")
+					+productblock("#","http://placehold.it/208x256/ffffff","Double-Layered Top","€ 89,95")
+					+productblock("#","http://placehold.it/208x256/ffffff","Double-Layered Top","€ 89,95")
+					+productblock("#","http://placehold.it/208x256/ffffff","Double-Layered Top","€ 89,95")
+		.container.lookbook
+			h4 Check our lookbook
+		include includes/slider	
+		include includes/footer

@@ -1,0 +1,16 @@
+.container.slider
+	mixin pictures(src)
+		.pic
+			img(src=""+src)
+			if block
+				block		
+	+pictures("")
+		.arrows.left
+			img(src="images/arrow_left.png")
+	+pictures("")
+	+pictures("")
+	+pictures("")
+	+pictures("")
+	+pictures("")
+		.arrows.right
+			img(src="images/arrow_right.png")

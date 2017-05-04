@@ -1,0 +1,49 @@
+extends includes/template
+
+block title 
+	| Main Page
+append links
+	link(href='main.css' rel='stylesheet') 
+block content 
+	.mainwrapper
+		.container
+			-var authorization = false;
+			-var quantity = 0;
+			include includes/top_navigation
+		.container.banner
+			h2 Hazy Shade of spring
+			p Quisque lorem tortor fringilla sed, vestibulum id, eleifend justo.
+			.button(role="button") check new arrivals
+		.container.preview
+			mixin itemcontent(classname1,text1,classname2,text2)
+				p(class=""+classname1)= text1
+				p(class=""+classname2)= text2
+			.item.big.item1
+				+itemcontent("header","HEATHER GREY BASICS","text","New Arrival")
+			.item.item2
+				+itemcontent("text","Opening Ceremony @IndonesiaFW tomorrow, PMers! Are you ready for the biggest fashion movement in Indonesia?","sign","@PuspitaMarthaID") 
+			.item.item3
+			.item.item4
+				+itemcontent("header","elegant shoes","text","BRAIDED LEATHER")
+			.item.item5
+				+itemcontent("header","chuck taylors","text","$125.00")
+			.item.item6
+				+itemcontent("text","Girls, Girls, Girls: A Look Back at 50 Years of the Pirelli Calendar","sign","@Vogue")
+			.item.big.item7
+				+itemcontent("header","jeans for ADVENTURE","text","New Arrival")
+			.item.item8
+			.item.item9
+				+itemcontent("header","Jaxon Hat","text","Beanie Hat") 
+			.item.item10
+				+itemcontent("header","basic blazer","text","from $199.00")
+			.clearfix
+		.container.signup
+			h3 sign up to receive our updates
+			p Nulla ipsum dolor lacus, suscipit adipiscing. Cum sociis natoque penatibus et ultrices volutpat.
+			form
+				input(type='text' placeholder="Your e-mail")
+				input(type='submit' value="add")
+				p.rightemail Thank You
+				p.wrong Wrong e-mail. Please try again
+		include includes/slider
+		include includes/footer

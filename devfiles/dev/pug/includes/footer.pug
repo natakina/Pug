@@ -1,0 +1,20 @@
+footer(class='container')
+	mixin footerblock(header,blockList)
+		.footerblock
+			h4= header
+			ul
+				each item in blockList
+					li: a(href='#')= item	
+	+footerblock("Collection",["Woman (1725)", "Men (635)", "Kids (2514)", "Comming Soon (76)"])
+	+footerblock("site",["Terms of Service", "Privacy Policy", "Copyright Policy", "Press Kit", "Support"])
+	+footerblock("Shop",["About us", "Shipping Metods", "Career", "Contact"])
+	.footerblock
+		h4 Social
+		p!= 'Shoper is made with love in Warsaw, <br> 2014 © All rights reserved. El Passion'
+		.social
+			mixin socialitems(item,href)
+				a(class="social-link "+item href= href target="blank")
+			+socialitems("tw","https://twitter.com/")
+			+socialitems("fb","https://www.facebook.com/")
+			+socialitems("insta","https://www.instagram.com/")
+			

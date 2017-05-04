@@ -1,0 +1,20 @@
+
+.topnav
+	a(class='logo' href='#') SH
+	ul(class='navmenu')
+		- var list = ["Woman", "Man", "Kids", "Comming soon", "About"];
+		each item in list
+			li: a(href='#')= item
+	.rightmenu
+		.login
+			if authorization
+				|Hi, Michal (
+				span logout
+				|)
+			else
+				a(href='#') Log in	
+		.basket
+			a(href='#') Basket (#{quantity})
+		form
+			input(type="search" placeholder="Search something...")
+			input(type="submit" value=" ")
